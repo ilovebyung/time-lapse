@@ -1,0 +1,5 @@
+# create a list of image files
+ls *.jpg | sort -V | xargs -I {} echo "file '{}'" > list.txt
+
+# create a video
+ffmpeg -f concat -i list.txt out.mp4
